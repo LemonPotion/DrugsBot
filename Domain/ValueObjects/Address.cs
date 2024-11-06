@@ -3,8 +3,15 @@
 /// <summary>
 /// Класс, представляющий адрес.
 /// </summary>
-public class Address
+public class Address : BaseValueObject
 {
+    /// <summary>
+    /// Пустой конструктор, который может использоваться для создания экземпляра объекта без начальной инициализации.
+    /// </summary>
+    public Address()
+    {
+    }
+
     /// <summary>
     /// Инициализирует новый экземпляр класса <see cref="Address"/> с указанием города, улицы и дома.
     /// </summary>

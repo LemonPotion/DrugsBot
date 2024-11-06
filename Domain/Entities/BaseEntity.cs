@@ -45,7 +45,7 @@ public abstract class BaseEntity
         var values = props.Select(prop => $"{prop.Name}: {prop.GetValue(this) ?? "null"}");
         return string.Join(" ", values);
     }
-    
+
     /// <summary>
     /// Оператор сравнения на равенство.
     /// </summary>
