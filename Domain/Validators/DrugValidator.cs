@@ -16,15 +16,15 @@ public class DrugValidator : AbstractValidator<Drug>
     {
         RuleFor(d => d.Name)
             .NotNullOrEmptyWithMessage(nameof(Drug.Name))
-            .MaximumLength(100).WithMessage(ValidationMessages.TooHighValue(nameof(Drug.Name)));
+            .MaximumLength(100).WithMessage(ValidationMessages.InvalidFormat(nameof(Drug.Name)));
 
         RuleFor(d => d.Manufacturer)
             .NotNullOrEmptyWithMessage(nameof(Drug.Manufacturer))
-            .MaximumLength(100).WithMessage(ValidationMessages.TooHighValue(nameof(Drug.Manufacturer)));
+            .MaximumLength(100).WithMessage(ValidationMessages.InvalidFormat(nameof(Drug.Manufacturer)));
 
         RuleFor(d => d.CountryCodeId)
             .NotNullOrEmptyWithMessage(nameof(Drug.CountryCodeId))
-            .Length(2).WithMessage(ValidationMessages.TooHighValue(nameof(Drug.CountryCodeId)));
+            .Length(2).WithMessage(ValidationMessages.InvalidFormat(nameof(Drug.CountryCodeId)));
 
         RuleFor(d => d.Country)
             .NotNull().WithMessage(ValidationMessages.NullException(nameof(Drug.Country)));

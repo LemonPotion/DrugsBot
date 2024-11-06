@@ -16,7 +16,7 @@ public class CountryValidator : AbstractValidator<Country>
     {
         RuleFor(c => c.Name)
             .NotNullOrEmptyWithMessage(nameof(Country.Name))
-            .MaximumLength(100).WithMessage(ValidationMessages.TooHighValue(nameof(Country.Name)));
+            .MaximumLength(100).WithMessage(ValidationMessages.InvalidFormat(nameof(Country.Name)));
 
         RuleFor(c => c.CountryCode)
             .NotNullOrEmptyWithMessage(nameof(Country.CountryCode))

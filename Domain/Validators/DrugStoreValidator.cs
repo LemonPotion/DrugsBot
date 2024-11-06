@@ -16,11 +16,11 @@ public class DrugStoreValidator : AbstractValidator<DrugStore>
     {
         RuleFor(ds => ds.DrugNetwork)
             .NotEmpty().WithMessage(ValidationMessages.EmptyException(nameof(DrugStore.DrugNetwork)))
-            .MaximumLength(100).WithMessage(ValidationMessages.TooHighValue(nameof(DrugStore.DrugNetwork)));
+            .MaximumLength(100).WithMessage(ValidationMessages.InvalidFormat(nameof(DrugStore.DrugNetwork)));
 
         RuleFor(ds => ds.Name)
             .NotEmpty().WithMessage(ValidationMessages.EmptyException(nameof(DrugStore.Name)))
-            .MaximumLength(100).WithMessage(ValidationMessages.TooHighValue(nameof(DrugStore.Name)));
+            .MaximumLength(100).WithMessage(ValidationMessages.InvalidFormat(nameof(DrugStore.Name)));
 
         RuleFor(ds => ds.Number)
             .GreaterThan(0).WithMessage(ValidationMessages.TooLowValue(nameof(DrugStore.Number)));
