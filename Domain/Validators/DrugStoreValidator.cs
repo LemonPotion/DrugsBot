@@ -15,25 +15,23 @@ public class DrugStoreValidator : AbstractValidator<DrugStore>
     public DrugStoreValidator()
     {
         RuleFor(ds => ds.DrugNetwork)
-            .NotEmpty().WithMessage(ValidationMessages.EmptyException(nameof(DrugStore.DrugNetwork)))
-            .MaximumLength(100).WithMessage(ValidationMessages.InvalidFormat(nameof(DrugStore.DrugNetwork)));
+            .NotNullOrEmptyWithMessage()
+            .Length(2, 100).WithMessage(ValidationMessages.InvalidFormat(nameof(DrugStore.DrugNetwork)));
 
         RuleFor(ds => ds.Name)
-            .NotEmpty().WithMessage(ValidationMessages.EmptyException(nameof(DrugStore.Name)))
+            .NotNullOrEmptyWithMessage()
             .MaximumLength(100).WithMessage(ValidationMessages.InvalidFormat(nameof(DrugStore.Name)));
 
         RuleFor(ds => ds.Number)
             .GreaterThan(0).WithMessage(ValidationMessages.TooLowValue(nameof(DrugStore.Number)));
 
         RuleFor(ds => ds.Address)
-            .NotNull().WithMessage(ValidationMessages.NullException(nameof(DrugStore.Address)));
+            .NotNullOrEmptyWithMessage()
+            .SetValidator(new AddressValidator());
 
         RuleFor(ds => ds.PhoneNumber)
-            .NotEmpty().WithMessage(ValidationMessages.EmptyException(nameof(DrugStore.PhoneNumber)))
+            .NotNullOrEmptyWithMessage()
             .Matches(ValidationRegexes.PhoneNumber)
             .WithMessage(ValidationMessages.InvalidFormat(nameof(DrugStore.PhoneNumber)));
-
-        RuleFor(ds => ds.DrugItems)
-            .NotNull().WithMessage(ValidationMessages.NullException(nameof(DrugStore.DrugItems)));
     }
 }

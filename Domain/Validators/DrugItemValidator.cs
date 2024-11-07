@@ -14,16 +14,12 @@ public class DrugItemValidator : AbstractValidator<DrugItem>
     /// </summary>
     public DrugItemValidator()
     {
-        RuleFor(di => di.DrugId)
-            .NotEmpty().WithMessage(ValidationMessages.EmptyException(nameof(DrugItem.DrugId)));
-
-        RuleFor(di => di.DrugStoreId)
-            .NotEmpty().WithMessage(ValidationMessages.EmptyException(nameof(DrugItem.DrugStoreId)));
-
         RuleFor(di => di.Count)
-            .GreaterThanOrEqualTo(0).WithMessage(ValidationMessages.TooLowValue(nameof(DrugItem.Count)));
+            .GreaterThanOrEqualTo(0).WithMessage(ValidationMessages.TooLowValue(nameof(DrugItem.Count)))
+            .LessThanOrEqualTo(10000);
 
         RuleFor(di => di.Cost)
-            .GreaterThan(0).WithMessage(ValidationMessages.TooLowValue(nameof(DrugItem.Cost)));
+            .GreaterThan(0).WithMessage(ValidationMessages.TooLowValue(nameof(DrugItem.Cost)))
+            .PrecisionScale(10, 2, true).WithMessage(ValidationMessages.InvalidFormat(nameof(DrugItem.Cost)));
     }
 }

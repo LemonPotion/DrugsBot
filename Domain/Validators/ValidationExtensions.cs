@@ -17,11 +17,11 @@ public static class ValidationExtensions
     /// <param name="paramName">Имя проверяемого параметра, которое будет использоваться в сообщении об ошибке.</param>
     /// <returns>Возвращает объект <see cref="IRuleBuilderOptions{T, TProperty}"/>, для дальнейшего построения правила валидации.</returns>
     public static IRuleBuilderOptions<T, TProperty> NotNullOrEmptyWithMessage<T, TProperty>(
-        this IRuleBuilder<T, TProperty> ruleBuilder,
-        string paramName)
+        this IRuleBuilder<T, TProperty> ruleBuilder)
     {
         return ruleBuilder
-            .NotNull().WithMessage(ValidationMessages.NullException(paramName)) // Проверка на null
-            .NotEmpty().WithMessage(ValidationMessages.EmptyException(paramName)); // Проверка на пустое значение
+            .NotNull().WithMessage(param => ValidationMessages.NullException(nameof(param))) // Проверка на null
+            .NotEmpty()
+            .WithMessage(param => ValidationMessages.EmptyException(nameof(param))); // Проверка на пустое значение
     }
 }

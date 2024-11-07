@@ -15,14 +15,13 @@ public class CountryValidator : AbstractValidator<Country>
     public CountryValidator()
     {
         RuleFor(c => c.Name)
-            .NotNullOrEmptyWithMessage(nameof(Country.Name))
-            .MaximumLength(100).WithMessage(ValidationMessages.InvalidFormat(nameof(Country.Name)));
+            .NotNullOrEmptyWithMessage()
+            .Length(2, 100).WithMessage(ValidationMessages.InvalidFormat(nameof(Country.Name)))
+            .Matches(ValidationRegexes.CountryName).WithMessage(ValidationMessages.InvalidFormat(nameof(Country.Name)));
 
         RuleFor(c => c.CountryCode)
-            .NotNullOrEmptyWithMessage(nameof(Country.CountryCode))
-            .Length(2).WithMessage(ValidationMessages.InvalidFormat(nameof(Country.CountryCode)));
-
-        RuleFor(c => c.Drugs)
-            .NotNull().WithMessage(ValidationMessages.NullException(nameof(Country.Drugs)));
+            .NotNullOrEmptyWithMessage()
+            .Length(2).WithMessage(ValidationMessages.InvalidFormat(nameof(Country.CountryCode)))
+            .Matches(ValidationRegexes.CountryCode).WithMessage(ValidationMessages.InvalidFormat(nameof(Country.Name)));
     }
 }
