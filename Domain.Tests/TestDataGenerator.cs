@@ -15,7 +15,8 @@ public class TestDataGenerator
         _addressFaker = new Faker<Address>()
             .RuleFor(a => a.City, f => f.Address.City())
             .RuleFor(a => a.Street, f => f.Address.StreetName())
-            .RuleFor(a => a.House, f => f.Random.Int().ToString());
+            .RuleFor(a => a.PostalCode, f => f.Random.Int(11111,999999))
+            .RuleFor(a => a.CountryCode, f => f.Address.CountryCode());
 
         _countryFaker = new Faker<Country>()
             .RuleFor(d => d.Id, f => f.Random.Guid())
@@ -65,7 +66,7 @@ public class TestDataGenerator
             .RuleFor(di => di.DrugId, f => f.PickRandom(drugs).Id)
             .RuleFor(di => di.DrugStoreId, f => f.PickRandom(drugStores).Id)
             .RuleFor(di => di.Count, f => f.Random.Int(1, 50))
-            .RuleFor(di => di.Cost, f => f.Random.Decimal(1, 500));
+            .RuleFor(di => di.Cost, f => f.Finance.Amount(1, 500));
 
         return drugItemFaker.Generate(count);
     }

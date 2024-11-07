@@ -5,30 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96c63abe-50cc-43a1-9872-a2d59da2893b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Domain.Tests/CountryValidationTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain.Tests/Domain.Tests.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain.Tests/DrugItemValidationTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain.Tests/DrugStoreValidationTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain.Tests/DrugValidationTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain.Tests/TestDataGenerator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Validators/CountryValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Validators/DrugItemValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Validators/DrugStoreValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Validators/DrugValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Validators/ValidationExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Validators/ValidationMessages.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Validators/ValidationRegexes.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/ValueObjects/BaseValueObject.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DrugsBot.sln.DotSettings.user" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Validators/AddressValidator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DrugsBot/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DrugsBot/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Domain.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entities/BaseEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/BaseEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entities/Country.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/Country.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entities/Drug.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/Drug.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entities/DrugItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/DrugItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entities/DrugStore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/DrugStore.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain.Tests/TestDataGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain.Tests/TestDataGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Validators/CountryValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Validators/CountryValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Validators/DrugItemValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Validators/DrugItemValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Validators/DrugStoreValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Validators/DrugStoreValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Validators/DrugValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Validators/DrugValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Validators/ValidationExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Validators/ValidationExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Validators/ValidationRegexes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Validators/ValidationRegexes.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/ValueObjects/Address.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/ValueObjects/Address.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DrugsBot.sln" beforeDir="false" afterPath="$PROJECT_DIR$/DrugsBot.sln" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +42,8 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Users/Lemon/OneDrive/Рабочий стол/Dex practice/DrugsBot/Domain/Entities/BaseEntity.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/eec252cf40b8ff96a3a028a3eddc6ac8c0d3f385d85e6def3cfc7d63fbc5918e/DefaultValidatorExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Lemon/OneDrive/Рабочий стол/Dex practice/DrugsBot/Domain/ValueObjects/Address.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -71,27 +58,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "develop",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\Lemon\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\Lemon\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\Lemon\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\Lemon\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\Lemon\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\Lemon\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -103,7 +90,10 @@
       <workItem from="1730302135399" duration="2583000" />
       <workItem from="1730645582130" duration="1017000" />
       <workItem from="1730905587087" duration="4140000" />
-      <workItem from="1730911029240" duration="4620000" />
+      <workItem from="1730911029240" duration="5229000" />
+      <workItem from="1730967481478" duration="3652000" />
+      <workItem from="1730971839419" duration="107000" />
+      <workItem from="1730975391532" duration="418000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit;">
       <option name="closed" value="true" />
@@ -121,7 +111,23 @@
       <option name="project" value="LOCAL" />
       <updated>1730646497730</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat: validation for entities, tests for entity validation;">
+      <option name="closed" value="true" />
+      <created>1730916284849</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1730916284849</updated>
+    </task>
+    <task id="LOCAL-00004" summary="refactor: changed exception messages in CountryValidator.cs, DrugStoreValidator.cs, DrugValidator.cs to more fitting;">
+      <option name="closed" value="true" />
+      <created>1730916687608</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1730916687608</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,6 +151,8 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Initial commit;" />
     <MESSAGE value="feat: Address.cs, BaseEntity.cs, Country.cs, Drug.cs, DrugItem.cs, DrugStore.cs;" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Address.cs, BaseEntity.cs, Country.cs, Drug.cs, DrugItem.cs, DrugStore.cs;" />
+    <MESSAGE value="feat: validation for entities, tests for entity validation;" />
+    <MESSAGE value="refactor: changed exception messages in CountryValidator.cs, DrugStoreValidator.cs, DrugValidator.cs to more fitting;" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: changed exception messages in CountryValidator.cs, DrugStoreValidator.cs, DrugValidator.cs to more fitting;" />
   </component>
 </project>

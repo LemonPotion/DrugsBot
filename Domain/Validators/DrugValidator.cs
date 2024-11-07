@@ -15,21 +15,18 @@ public class DrugValidator : AbstractValidator<Drug>
     public DrugValidator()
     {
         RuleFor(d => d.Name)
-            .NotNullOrEmptyWithMessage(nameof(Drug.Name))
-            .MaximumLength(100).WithMessage(ValidationMessages.InvalidFormat(nameof(Drug.Name)));
+            .NotNullOrEmptyWithMessage()
+            .Length(2,150).WithMessage(ValidationMessages.InvalidFormat(nameof(Drug.Name)))
+            .Matches(ValidationRegexes.DrugName).WithMessage(ValidationMessages.InvalidFormat(nameof(Drug.Name)));
 
         RuleFor(d => d.Manufacturer)
-            .NotNullOrEmptyWithMessage(nameof(Drug.Manufacturer))
-            .MaximumLength(100).WithMessage(ValidationMessages.InvalidFormat(nameof(Drug.Manufacturer)));
+            .NotNullOrEmptyWithMessage()
+            .Length(2,100).WithMessage(ValidationMessages.InvalidFormat(nameof(Drug.Manufacturer)))
+            .Matches(ValidationRegexes.Manufacturer).WithMessage(ValidationMessages.InvalidFormat(nameof(Drug.Name)));
 
         RuleFor(d => d.CountryCodeId)
-            .NotNullOrEmptyWithMessage(nameof(Drug.CountryCodeId))
-            .Length(2).WithMessage(ValidationMessages.InvalidFormat(nameof(Drug.CountryCodeId)));
-
-        RuleFor(d => d.Country)
-            .NotNull().WithMessage(ValidationMessages.NullException(nameof(Drug.Country)));
-
-        RuleFor(d => d.Amount)
-            .GreaterThanOrEqualTo(0).WithMessage(ValidationMessages.TooLowValue(nameof(Drug.Amount)));
+            .NotNullOrEmptyWithMessage()
+            .Length(2).WithMessage(ValidationMessages.InvalidFormat(nameof(Drug.CountryCodeId)))
+            .Matches(ValidationRegexes.CountryCodeId).WithMessage(ValidationMessages.InvalidFormat(nameof(Drug.Name)));
     }
 }

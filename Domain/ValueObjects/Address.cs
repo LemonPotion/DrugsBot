@@ -1,4 +1,7 @@
-﻿namespace Domain.ValueObjects;
+﻿using Domain.Validators;
+using FluentValidation;
+
+namespace Domain.ValueObjects;
 
 /// <summary>
 /// Класс, представляющий адрес.
@@ -11,18 +14,22 @@ public class Address : BaseValueObject
     public Address()
     {
     }
-
+    
     /// <summary>
-    /// Инициализирует новый экземпляр класса <see cref="Address"/> с указанием города, улицы и дома.
+    /// Инициализирует новый экземпляр класса <see cref="Address"/> с указанием города, улицы, номера дома, почтового кода и кода страны.
     /// </summary>
     /// <param name="city">Город.</param>
     /// <param name="street">Улица.</param>
-    /// <param name="house">Номер дома.</param>
-    public Address(string city, string street, string house)
+    /// <param name="postalCode">Почтовый код.</param>
+    /// <param name="countryCode">Код страны.</param>
+    public Address(string city, string street, int postalCode, string countryCode)
     {
         City = city;
         Street = street;
-        House = house;
+        PostalCode = postalCode;
+        CountryCode = countryCode;
+        
+        new AddressValidator().ValidateAndThrow(this);
     }
 
     /// <summary>
@@ -31,9 +38,14 @@ public class Address : BaseValueObject
     public string Street { get; private set; }
 
     /// <summary>
-    /// Номер дома.
+    /// Почтовый код
     /// </summary>
-    public string House { get; private set; }
+    public int PostalCode { get; private set; }
+    
+    /// <summary>
+    /// Код страны в формате ISO
+    /// </summary>
+    public string CountryCode { get; private set; }
 
     /// <summary>
     /// Город.
