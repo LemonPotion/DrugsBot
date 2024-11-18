@@ -2,7 +2,7 @@
 using FluentAssertions;
 using FluentValidation;
 
-namespace Domain.Tests;
+namespace Domain.Tests.CountryTests;
 
 public class CountryValidationTests
 {

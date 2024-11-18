@@ -7,7 +7,7 @@ namespace Domain.Entities;
 /// <summary>
 /// Сущность аптеки.
 /// </summary>
-public class DrugStore : BaseEntity
+public class DrugStore : BaseEntity<DrugStore>
 {
     /// <summary>
     /// Пустой конструктор, который может использоваться для создания экземпляра объекта без начальной инициализации.
@@ -34,7 +34,7 @@ public class DrugStore : BaseEntity
         Address = address;
         PhoneNumber = phoneNumber;
 
-        new DrugStoreValidator().ValidateAndThrow(this);
+        ValidateEntity(new DrugStoreValidator());
     }
 
     /// <summary>

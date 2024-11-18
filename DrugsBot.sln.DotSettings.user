@@ -1,4 +1,12 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=e0cbef45_002De885_002D4323_002D8ee0_002D7e8079d158b1/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="CountryValidationTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=e0cbef45_002De885_002D4323_002D8ee0_002D7e8079d158b1/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="CountryValidationTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;Project Location="C:\Users\Lemon\OneDrive\Рабочий стол\Dex practice\DrugsBot\Domain.Tests" Presentation="&amp;lt;Domain.Tests&amp;gt;" /&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=e5f4ded1_002Ddf10_002D4bce_002Db60e_002D635fa5f41d3f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="UpdateDrugAmount_ShouldThrowValidationException" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Project Location="C:\Users\Lemon\OneDrive\Рабочий стол\Dex practice\DrugsBot\Domain.Tests" Presentation="&amp;lt;Domain.Tests&amp;gt;" /&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=fbfb79b6_002D6542_002D4cf0_002Dbc64_002Da256d8fcc0c3/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="CountryValidationTests #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::8AD2C487-76F5-4219-82F4-5EF3D1855782::net8.0::Domain.Tests.CountryTests.CountryValidationTests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

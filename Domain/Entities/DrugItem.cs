@@ -1,9 +1,10 @@
-﻿using Domain.Validators;
+﻿using Domain.DomainEvents;
+using Domain.Validators;
 using FluentValidation;
 
 namespace Domain.Entities;
 
-public class DrugItem : BaseEntity
+public class DrugItem : BaseEntity<DrugItem>
 {
     /// <summary>
     /// Пустой конструктор, который может использоваться для создания экземпляра объекта без начальной инициализации.
@@ -18,17 +19,17 @@ public class DrugItem : BaseEntity
     /// </summary>
     /// <param name="drugId">Идентификатор лекарства.</param>
     /// <param name="drugStoreId">Идентификатор аптеки.</param>
-    /// <param name="count">Количество товара в наличии.</param>
+    /// <param name="amount">Количество товара в наличии.</param>
     /// <param name="cost">Стоимость товара.</param>
     /// <exception cref="ValidationException">Выбрасывается, если данные не проходят валидацию.</exception>
-    public DrugItem(Guid drugId, Guid drugStoreId, int count, decimal cost)
+    public DrugItem(Guid drugId, Guid drugStoreId, double amount, decimal cost)
     {
         DrugId = drugId;
         DrugStoreId = drugStoreId;
-        Count = count;
+        Amount = amount;
         Cost = cost;
 
-        new DrugItemValidator().ValidateAndThrow(this);
+        ValidateEntity(new DrugItemValidator());
     }
 
     /// <summary>
@@ -54,10 +55,19 @@ public class DrugItem : BaseEntity
     /// <summary>
     /// Количество единиц лекарства.
     /// </summary>
-    public int Count { get; private set; }
+    public double Amount { get; private set; }
 
     /// <summary>
     /// Стоимость одной единицы лекарства.
     /// </summary>
     public decimal Cost { get; private set; }
+
+    public void UpdateDrugAmount(double amount)
+    {
+        Amount = amount;
+
+        ValidateEntity(new DrugItemValidator());
+        
+        AddDomainEvent(new DrugItemUpdateEvent(DrugId, amount));
+    }
 }

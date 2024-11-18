@@ -14,8 +14,8 @@ public class DrugItemValidator : AbstractValidator<DrugItem>
     /// </summary>
     public DrugItemValidator()
     {
-        RuleFor(di => di.Count)
-            .GreaterThanOrEqualTo(0).WithMessage(ValidationMessages.TooLowValue(nameof(DrugItem.Count)))
+        RuleFor(di => di.Amount)
+            .GreaterThanOrEqualTo(0).WithMessage(ValidationMessages.TooLowValue(nameof(DrugItem.Amount)))
             .LessThanOrEqualTo(10000);
 
         RuleFor(di => di.Cost)

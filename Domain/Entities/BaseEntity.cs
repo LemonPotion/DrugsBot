@@ -1,10 +1,43 @@
-﻿namespace Domain.Entities;
+﻿using Domain.Interface;
+using FluentValidation;
+
+namespace Domain.Entities;
 
 /// <summary>
 /// Базовый абстрактный класс сущности.
 /// </summary>
-public abstract class BaseEntity
+public abstract class BaseEntity<T> where T : BaseEntity<T>
 {
+
+    protected List<IDomainEvent> DomainEvents { get; set; } = [];
+
+    protected void AddDomainEvent(IDomainEvent domainEvent)
+    {
+        DomainEvents.Add(domainEvent);
+    }
+    
+    public void ClearDomainEvent()
+    {
+        DomainEvents.Clear();
+    }
+    
+    protected void ValidateEntity(AbstractValidator<T> validator)
+    {
+        var validationResult = validator.Validate((T)this);
+        if (validationResult.IsValid)
+        {
+            return;
+        }
+
+        var errorMessages = string.Join("; ", validationResult.Errors.Select(e => e.ErrorMessage));
+        throw new ValidationException(errorMessages);
+    }
+    
+    public IReadOnlyList<IDomainEvent> GetDomainEvents()
+    {
+        return DomainEvents.AsReadOnly();
+    }
+    
     /// <summary>
     /// Уникальный идентификатор сущности.
     /// </summary>
@@ -19,7 +52,7 @@ public abstract class BaseEntity
     {
         if (obj == null)
             return false;
-        else if (obj is not BaseEntity entity)
+        else if (obj is not BaseEntity<T> entity)
             return false;
         else if (entity.Id != Id)
             return false;
@@ -52,7 +85,7 @@ public abstract class BaseEntity
     /// <param name="left">Левый операнд.</param>
     /// <param name="right">Правый операнд.</param>
     /// <returns>True, если объекты равны; иначе false.</returns>
-    public static bool operator ==(BaseEntity? left, BaseEntity? right)
+    public static bool operator ==(BaseEntity<T>? left, BaseEntity<T>? right)
     {
         if (ReferenceEquals(left, right))
             return true;
@@ -67,7 +100,7 @@ public abstract class BaseEntity
     /// <param name="left">Левый операнд.</param>
     /// <param name="right">Правый операнд.</param>
     /// <returns>True, если объекты не равны; иначе false.</returns>
-    public static bool operator !=(BaseEntity? left, BaseEntity? right)
+    public static bool operator !=(BaseEntity<T>? left, BaseEntity<T>? right)
     {
         return !(left == right);
     }

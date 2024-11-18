@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using FluentValidation;
 
 namespace Domain.ValueObjects;
 
@@ -16,8 +17,7 @@ public abstract class BaseValueObject : IEquatable<BaseValueObject>
     {
         if (other == null || other.GetType() != GetType())
             return false;
-
-        // Сравниваем все свойства
+        
         foreach (var property in GetProperties())
         {
             var value1 = property.GetValue(this);
@@ -25,8 +25,7 @@ public abstract class BaseValueObject : IEquatable<BaseValueObject>
             if (!Equals(value1, value2))
                 return false;
         }
-
-        // Сравниваем все поля
+        
         foreach (var field in GetFields())
         {
             var value1 = field.GetValue(this);
@@ -110,5 +109,16 @@ public abstract class BaseValueObject : IEquatable<BaseValueObject>
     public static bool operator !=(BaseValueObject? left, BaseValueObject? right)
     {
         return !(left == right);
+    }
+    
+    
+    protected void ValidateValueObject<T>(AbstractValidator<T> validator) where T : BaseValueObject
+    {
+        var result = validator.Validate((T)this);
+        
+        if (result.IsValid) return;
+        
+        var errors = string.Join("; ", result.Errors.Select(e => e.ErrorMessage));
+        throw new ValidationException($"Validation failed for {typeof(T).Name}: {errors}");
     }
 }

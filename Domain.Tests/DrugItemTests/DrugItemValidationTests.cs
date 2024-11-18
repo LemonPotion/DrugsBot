@@ -2,7 +2,7 @@
 using FluentAssertions;
 using FluentValidation;
 
-namespace Domain.Tests;
+namespace Domain.Tests.DrugItemTests;
 
 public class DrugItemValidationTests
 {
@@ -17,12 +17,12 @@ public class DrugItemValidationTests
     public void Should_Validate_DrugItem()
     {
         //Arrange
-        var drugs = _dataGenerator.GenerateDrugs(_dataGenerator.GenerateCountries(3), 5);
-        var drugStores = _dataGenerator.GenerateDrugStores(3);
-        var testData = _dataGenerator.GenerateDrugItems(drugs, drugStores, 1).First();
+        var drugs = _dataGenerator.GenerateDrugs();
+        var drugStores = _dataGenerator.GenerateDrugStores();
+        var testData = _dataGenerator.GenerateDrugItems(1).First();
 
         //Act
-        Action action = () => new DrugItem(testData.DrugId, testData.DrugStoreId, testData.Count, testData.Cost);
+        Action action = () => new DrugItem(testData.DrugId, testData.DrugStoreId, testData.Amount, testData.Cost);
 
         //Assert
         action.Should().NotThrow<ValidationException>();

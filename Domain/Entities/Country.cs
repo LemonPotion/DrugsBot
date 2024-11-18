@@ -6,7 +6,7 @@ namespace Domain.Entities;
 /// <summary>
 /// Страна производителя лекарств.
 /// </summary>
-public class Country : BaseEntity
+public class Country : BaseEntity<Country>
 {
     /// <summary>
     /// Пустой конструктор, который может использоваться для создания экземпляра объекта без начальной инициализации.
@@ -26,7 +26,7 @@ public class Country : BaseEntity
     {
         Name = name;
         CountryCode = countryCode;
-        new CountryValidator().ValidateAndThrow(this);
+        ValidateEntity(new CountryValidator());
     }
 
     /// <summary>

@@ -6,7 +6,7 @@ namespace Domain.Entities;
 /// <summary>
 /// Сущность лекарства.
 /// </summary>
-public class Drug : BaseEntity
+public class Drug : BaseEntity<Drug>
 {
     /// <summary>
     /// Пустой конструктор, который может использоваться для создания экземпляра объекта без начальной инициализации.
@@ -33,7 +33,7 @@ public class Drug : BaseEntity
         Country = country;
         Amount = amount;
 
-        new DrugValidator().ValidateAndThrow(this);
+        ValidateEntity(new DrugValidator());
     }
 
     /// <summary>

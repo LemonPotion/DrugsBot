@@ -55,4 +55,9 @@ public static class ValidationRegexes
     /// Формат: буквы и пробелы.
     /// </summary>
     public static Regex City { get; } = new Regex(@"^[a-zA-Z\s]+$");
+    
+    /// <summary>
+    /// Электронная почта
+    /// </summary>
+    public static readonly Regex EmailPattern = new (@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}");
 }

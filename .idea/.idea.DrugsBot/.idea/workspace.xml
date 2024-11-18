@@ -5,16 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96c63abe-50cc-43a1-9872-a2d59da2893b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Domain/Validators/AddressValidator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain.Tests/DrugItemEventTests/DrugItemEventPositiveTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/DomainEvents/DrugItemUpdateEvent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Entities/FavoriteDrug.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Entities/Profile.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Interface/IDomainEvent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Validators/EmailValidator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Validators/FavouriteDrugValidator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Validators/ProfileValidator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/ValueObjects/Email.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DrugsBot/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DrugsBot/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain.Tests/CountryValidationTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain.Tests/CountryTests/CountryValidationTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain.Tests/DrugItemValidationTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain.Tests/DrugItemTests/DrugItemValidationTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain.Tests/DrugStoreValidationTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain.Tests/DrugStoreTests/DrugStoreValidationTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain.Tests/DrugValidationTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain.Tests/DrugTests/DrugValidationTests.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain.Tests/TestDataGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain.Tests/TestDataGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Validators/CountryValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Validators/CountryValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Domain.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Entities/BaseEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/BaseEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Entities/Country.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/Country.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Entities/Drug.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/Drug.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Entities/DrugItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/DrugItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Entities/DrugStore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/DrugStore.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/Validators/DrugItemValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Validators/DrugItemValidator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Validators/DrugStoreValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Validators/DrugStoreValidator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Validators/DrugValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Validators/DrugValidator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Validators/ValidationExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Validators/ValidationExtensions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/Validators/ValidationRegexes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Validators/ValidationRegexes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/ValueObjects/Address.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/ValueObjects/Address.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/ValueObjects/BaseValueObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/ValueObjects/BaseValueObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrugsBot.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/DrugsBot.sln.DotSettings.user" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +58,9 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/eec252cf40b8ff96a3a028a3eddc6ac8c0d3f385d85e6def3cfc7d63fbc5918e/DefaultValidatorExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Lemon/OneDrive/Рабочий стол/Dex practice/DrugsBot/Domain/ValueObjects/Address.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Lemon/OneDrive/Рабочий стол/Dex practice/DrugsBot/Domain/Entities/BaseEntity.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Lemon/OneDrive/Рабочий стол/Dex practice/DrugsBot/Domain/Entities/Country.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Lemon/OneDrive/Рабочий стол/Dex practice/DrugsBot/Domain/ValueObjects/BaseValueObject.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -79,6 +96,7 @@
     ]
   }
 }</component>
+  <component name="RunManager" selected="e5f4ded1-df10-4bce-b60e-635fa5f41d3f" />
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -93,7 +111,10 @@
       <workItem from="1730911029240" duration="5229000" />
       <workItem from="1730967481478" duration="3652000" />
       <workItem from="1730971839419" duration="107000" />
-      <workItem from="1730975391532" duration="418000" />
+      <workItem from="1730975391532" duration="1422000" />
+      <workItem from="1731510429073" duration="3285000" />
+      <workItem from="1731932060911" duration="5330000" />
+      <workItem from="1731937508428" duration="420000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit;">
       <option name="closed" value="true" />
@@ -127,7 +148,23 @@
       <option name="project" value="LOCAL" />
       <updated>1730916687608</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fix: changed validation according to task;">
+      <option name="closed" value="true" />
+      <created>1730975919067</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1730975919067</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat: some xml comments;">
+      <option name="closed" value="true" />
+      <created>1730976015812</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1730976015812</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,6 +190,8 @@
     <MESSAGE value="feat: Address.cs, BaseEntity.cs, Country.cs, Drug.cs, DrugItem.cs, DrugStore.cs;" />
     <MESSAGE value="feat: validation for entities, tests for entity validation;" />
     <MESSAGE value="refactor: changed exception messages in CountryValidator.cs, DrugStoreValidator.cs, DrugValidator.cs to more fitting;" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: changed exception messages in CountryValidator.cs, DrugStoreValidator.cs, DrugValidator.cs to more fitting;" />
+    <MESSAGE value="fix: changed validation according to task;" />
+    <MESSAGE value="feat: some xml comments;" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: some xml comments;" />
   </component>
 </project>

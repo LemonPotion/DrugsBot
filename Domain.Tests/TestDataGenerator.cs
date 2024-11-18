@@ -47,25 +47,25 @@ public class TestDataGenerator
         return _drugStoreFaker.Generate(count);
     }
 
-    public List<Drug> GenerateDrugs(List<Country> countries, int count = 1000)
+    public List<Drug> GenerateDrugs(int count = 1000)
     {
         var drugFaker = new Faker<Drug>()
             .RuleFor(d => d.Id, f => f.Random.Guid())
-            .RuleFor(d => d.Name, f => f.Commerce.ProductName())
+            .RuleFor(d => d.Name, f => f.Lorem.Word())
             .RuleFor(d => d.Manufacturer, f => f.Company.CompanyName())
             .RuleFor(d => d.CountryCodeId, f => f.Address.CountryCode())
-            .RuleFor(d => d.Country, f => f.PickRandom(countries))
+            .RuleFor(d => d.Country, f => f.PickRandom(GenerateCountries()))
             .RuleFor(d => d.Amount, f => f.Random.Int(0, 100));
 
         return drugFaker.Generate(count);
     }
 
-    public List<DrugItem> GenerateDrugItems(List<Drug> drugs, List<DrugStore> drugStores, int count = 1000)
+    public List<DrugItem> GenerateDrugItems(int count = 1000)
     {
         var drugItemFaker = new Faker<DrugItem>()
-            .RuleFor(di => di.DrugId, f => f.PickRandom(drugs).Id)
-            .RuleFor(di => di.DrugStoreId, f => f.PickRandom(drugStores).Id)
-            .RuleFor(di => di.Count, f => f.Random.Int(1, 50))
+            .RuleFor(di => di.DrugId, f => f.PickRandom(GenerateDrugs()).Id)
+            .RuleFor(di => di.DrugStoreId, f => f.PickRandom(GenerateDrugStores()).Id)
+            .RuleFor(di => di.Amount, f => f.Random.Int(1, 50))
             .RuleFor(di => di.Cost, f => f.Finance.Amount(1, 500));
 
         return drugItemFaker.Generate(count);
